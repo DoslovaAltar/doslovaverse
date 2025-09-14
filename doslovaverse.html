@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doslovaverse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
+        .minecraft-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            background-size: cover;
+            overflow: hidden;
+        }
+        
+        /* Cool and modern button animation */
+        .cool-button {
+            position: relative;
+            background-image: linear-gradient(45deg, #1d4ed8, #4a90e2);
+            border: none;
+            color: white;
+            padding: 1rem 3rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.5rem;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 9999px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cool-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .cool-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            transition: transform 0.5s ease;
+            transform: scale(0);
+            pointer-events: none;
+        }
+
+        .cool-button:hover::before {
+            transform: scale(1);
+        }
+
+        .red-button {
+            background-image: linear-gradient(45deg, #dc2626, #ef4444);
+        }
+    </style>
+</head>
+<body class="bg-black text-white overflow-hidden">
+    <!-- Background Video -->
+    <div class="video-background">
+        <div class="video-foreground">
+            <!-- 
+            Vložení YouTube videa s parametry:
+            - autoplay=1: Přehrát video automaticky
+            - controls=0: Skrýt ovládací prvky videa
+            - modestbranding=1: Redukovat logo YouTube
+            - loop=1: Opakovat video
+            - mute=1: Ztlumit video
+            - playlist=TY6KMrkgaH4: Nutné pro opakování
+            - showinfo=0: Skrýt název a další info
+            - rel=0: Zobrazit na konci pouze související videa z kanálu, ne z celého YouTube
+            -->
+            <iframe id="bg-video"
+                src="https://www.youtube.com/embed/TY6KMrkgaH4?controls=0&autoplay=1&mute=1&loop=1&playlist=TY6KMrkgaH4&modestbranding=1&showinfo=0&rel=0"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Content Overlay -->
+    <div class="relative w-screen h-screen flex flex-col justify-center items-center text-center p-4">
+        <h1 class="minecraft-font text-4xl sm:text-6xl lg:text-7xl text-yellow-300 drop-shadow-lg leading-tight">
+            Doslovaverse
+        </h1>
+        <p class="mt-4 text-sm sm:text-base lg:text-lg text-gray-200">
+            Objevte svět plný projektů z Minecraftu.
+        </p>
+        <button id="projects-btn" class="mt-8 cool-button font-bold text-xl">
+            Projekty
+        </button>
+        <button id="about-btn" class="mt-4 cool-button red-button font-bold text-xl">
+            Co je to Doslovaverse?
+        </button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const projectsBtn = document.getElementById('projects-btn');
+            const aboutBtn = document.getElementById('about-btn');
+            
+            if (projectsBtn) {
+                projectsBtn.addEventListener('click', () => {
+                    window.location.href = 'projekty.html';
+                });
+            }
+            if (aboutBtn) {
+                aboutBtn.addEventListener('click', () => {
+                    window.location.href = 'cojeto.html';
+                });
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doslovaverse - Projekty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
+        .minecraft-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        /* Styling for the project containers */
+        .project-card {
+            background-color: rgba(31, 41, 55, 0.8); /* Dark gray with transparency */
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Click animation */
+        .project-card:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            animation: pulse-glow 0.5s ease-out;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 rgba(144, 202, 249, 0.6); }
+            50% { box-shadow: 0 0 15px 5px rgba(144, 202, 249, 0.8); }
+            100% { box-shadow: 0 0 0 rgba(144, 202, 249, 0); }
+        }
+    </style>
+</head>
+<body class="bg-black text-white overflow-hidden">
+    <!-- Background Video -->
+    <div class="video-background">
+        <div class="video-foreground">
+            <!-- 
+            Embedding YouTube video with parameters:
+            - autoplay=1: Autoplay video
+            - controls=0: Hide video controls
+            - modestbranding=1: Reduce YouTube branding
+            - loop=1: Loop the video
+            - mute=1: Mute the video
+            - playlist=jAS-GKmQ_5o: Required for looping
+            -->
+            <iframe id="bg-video"
+                src="https://www.youtube.com/embed/jAS-GKmQ_5o?controls=0&autoplay=1&mute=1&loop=1&playlist=jAS-GKmQ_5o&modestbranding=1"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Content Overlay -->
+    <div class="relative w-screen h-screen flex flex-col items-center p-8 overflow-y-auto">
+        <!-- Back button and title -->
+        <div class="w-full flex justify-between items-center mb-10">
+            <button id="back-btn" class="p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+                </svg>
+            </button>
+            <h1 class="minecraft-font text-3xl sm:text-5xl lg:text-6xl text-yellow-300 drop-shadow-lg">
+                Projekty
+            </h1>
+            <div class="w-1/4"></div> <!-- Spacer to align title -->
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
+            <!-- Functional Project -->
+            <div id="graveyard-project" class="project-card">
+                <h2 class="minecraft-font text-xl sm:text-2xl text-blue-400">Hřbitov pro mazlíčky</h2>
+                <p class="mt-2 text-sm text-gray-300">
+                    Místo klidu pro vaše virtuální miláčky.
+                </p>
+            </div>
+
+            <!-- Future Projects Slots -->
+            <div class="project-card opacity-50 cursor-not-allowed">
+                <h2 class="minecraft-font text-lg sm:text-xl text-gray-500">Budoucí projekt</h2>
+            </div>
+            <div class="project-card opacity-50 cursor-not-allowed">
+                <h2 class="minecraft-font text-lg sm:text-xl text-gray-500">Budoucí projekt</h2>
+            </div>
+            <div class="project-card opacity-50 cursor-not-allowed">
+                <h2 class="minecraft-font text-lg sm:text-xl text-gray-500">Budoucí projekt</h2>
+            </div>
+            <div class="project-card opacity-50 cursor-not-allowed">
+                <h2 class="minecraft-font text-lg sm:text-xl text-gray-500">Budoucí projekt</h2>
+            </div>
+            <div class="project-card opacity-50 cursor-not-allowed">
+                <h2 class="minecraft-font text-lg sm:text-xl text-gray-500">Budoucí projekt</h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('back-btn').addEventListener('click', function() {
+            window.location.href = 'doslovaverse.html';
+        });
+
+        document.getElementById('graveyard-project').addEventListener('click', function() {
+            window.location.href = 'hrbitov.html';
+        });
+    </script>
+</body>
+</html>

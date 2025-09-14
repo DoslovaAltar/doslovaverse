@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hřbitov pro mazlíčky - Doslovaverse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;700&display=swap');
+        
+        .minecraft-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        body {
+            background-color: #2c3e50; /* Elegantní tmavě modrá barva */
+            color: #ecf0f1; /* Světle šedá barva písma */
+            font-family: 'Inter', sans-serif;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            background-color: #34495e; /* Tmavě šedé pozadí pro sekce */
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            max-width: 600px; /* Zmenšení kontejneru pro obrázky */
+            margin: 0 auto 2rem;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="minecraft-font text-3xl sm:text-4xl text-yellow-300 drop-shadow-lg mb-2">Hřbitov pro mazlíčky</h1>
+            <p class="text-xl">Místo klidu pro tvoje virtuální společníky</p>
+        </div>
+
+        <div class="section">
+            <p class="text-lg">
+                Vítej na našem Hřbitově pro mazlíčky, tichém a klidném místě, které jsme vytvořili s láskou a respektem, abys mohl důstojně pohřbít své věrné virtuální společníky ze světa Minecraftu. Je to místo, kde můžeš uchovat jejich památku a věnovat jim poslední rozloučení.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2 class="text-2xl font-bold mb-4">Pravidla hřbitova</h2>
+            <ul class="list-disc list-inside space-y-2 text-xl">
+                <li><strong class="font-semibold text-blue-300">📝 Formát textu:</strong> Drž se formátu textu na náhrobku, jak je ukázáno na druhé fotce, aby byla zachována jednotnost a estetika.</li>
+                <li><strong class="font-semibold text-blue-300">🪦 Zabírání hrobu:</strong> Vyber si volné místo a vytvoř svůj hrob. Nezapomeň přidat kytičku z truhly (nebo vlastní), která symbolizuje úctu a památku.</li>
+                <li><strong class="font-semibold text-blue-300">🚫 Respektování památky:</strong> Nezapomeň, že je přísně zakázáno ničit (griefovat) nebo přepisovat náhrobky jiných hráčů.</li>
+                <li><strong class="font-semibold text-blue-300">💎 Dobrovolný donate:</strong> U vchodu do hřbitova najdeš truhlu na dobrovolný donate. Příspěvek 2 diamantů slouží na údržbu a ochranu hřbitova, aby byl i nadále krásným a bezpečným místem.</li>
+            </ul>
+        </div>
+
+        <div class="image-container">
+            <a href="hrbitov1.png" target="_blank" rel="noopener noreferrer">
+                <img src="hrbitov1.png" alt="Celkový pohled na hřbitov" class="w-full">
+            </a>
+            <a href="hrbitov2.png" target="_blank" rel="noopener noreferrer">
+                <img src="hrbitov2.png" alt="Ukázka náhrobku s textem" class="w-full">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
